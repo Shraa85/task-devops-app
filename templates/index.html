@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main>
+        <h1>Task Management System</h1>
+        <p>Manage your daily tasks efficiently.</p>
+        <form action="/add" method="post">
+            <input name="title" placeholder="Enter a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <h2>My Tasks</h2>
+        {% for task in tasks %}
+        <div class="task">
+            <span class="{{ 'done' if task.done else '' }}">{{ task.title }}</span>
+            <form action="/complete/{{ task.id }}" method="post">
+                <button>{{ 'Undo' if task.done else 'Complete' }}</button>
+            </form>
+            <form action="/delete/{{ task.id }}" method="post">
+                <button class="delete">Delete</button>
+            </form>
+        </div>
+        {% else %}
+        <p>No tasks yet. Add your first task!</p>
+        {% endfor %}
+    </main>
+</body>
+</html>

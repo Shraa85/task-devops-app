@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 40px 16px;
+}
+main {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+}
+h1 { color: #203864; }
+input { padding: 10px; width: 60%; }
+button {
+    padding: 10px;
+    margin: 4px;
+    cursor: pointer;
+    background: #2463eb;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    gap: 6px;
+}
+.done { text-decoration: line-through; color: gray; }
+.delete { background: #c62828; }
